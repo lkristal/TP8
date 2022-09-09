@@ -11,7 +11,7 @@ function GetTemporadas(idserie,tituloSerie)
         dataType : 'json',
         success : function(response) {
             $("#ModalTitle").text("Temporadas de la serie " + tituloSerie);
-            var body="";
+            let body="";
             response.forEach(item => {
                 body += item.numeroTemporada + " " + item.tituloTemporada + "<br>";
             }); 
@@ -29,7 +29,7 @@ function GetActores(idserie,tituloSerie)
         dataType : 'json',
         success : function(response) {
             $("#ModalTitle").text("Actores de la serie " + tituloSerie);
-            var body="";
+            let body="";
             response.forEach(item => {
                 body += item.nombre + "<br>";
             }); 
@@ -47,7 +47,7 @@ function GetInfo(idserie)
         dataType : 'json',
         success : function(response) {
             $("#ModalTitle").text("Serie " + response.nombre);
-            var body = response.añoInicio + "<br>" + response.sinopsis;
+            const body = response.añoInicio + "<br>" + response.sinopsis;
             $("#ModalBody").html(body);       
         }
     });
